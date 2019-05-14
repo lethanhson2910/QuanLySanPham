@@ -8,9 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ProductManagermentComponent implements OnInit {
   public DSSP = [];
   sanpham = {};
-  masp = "";
-  tensp = "";
-  giasp = "";
+
   content:any = "";
   mau = true;
   bgcolor = true;
@@ -24,9 +22,6 @@ export class ProductManagermentComponent implements OnInit {
   }
 
   addProduct(maSP, tenSP, giaSP){
-    this.masp = maSP;
-    this.tensp = tenSP;
-    this.giasp = giaSP;
     this.sanpham = {maSP, tenSP, giaSP};
     this.DSSP.push(this.sanpham);
     localStorage.setItem("DSSP", JSON.stringify(this.DSSP));
