@@ -23,23 +23,15 @@
         <th>Giá SP</th>
       </tr>
     </thead>
-    <tbody *ngFor="let item of DSSP, let STT = index">
-      <ng-container *ngIf="(STT+1)%2 == 0; else bg">
-        <tr [ngClass]="{'mau': bgcolor}">
+    <tbody >
+      <ng-container *ngFor="let item of DSSP, let STT = index">
+        <tr [ngClass]="{'mau': (STT+1)%2 == 0}">
           <td>{{STT + 1}}</td>
           <td>{{item.tenSP}}</td>
           <td>{{item.maSP}}</td>
           <td>{{item.giaSP}}</td>
         </tr>
       </ng-container>
-      <ng-template #bg>
-        <tr [ngClass]="{'mau': false}">
-          <td>{{STT + 1}}</td>
-          <td>{{item.tenSP}}</td>
-          <td>{{item.maSP}}</td>
-          <td>{{item.giaSP}}</td>
-        </tr>
-      </ng-template>
     </tbody>
   </table>
 </div>
